@@ -1,18 +1,17 @@
 package poker;
 
-import cards.PlayedCards;
-import cards.Player;
+import cards.CardPot;
 
 public class ThreadCreation implements Runnable {
 
     Player player;
-    PlayedCards playedCards;
+    CardPot playedCards;
     Thread thread;
     int numberPlayers;
     int idPlayer;
     GuiGame guiGame = new GuiGame();
 
-    ThreadCreation (Player t, PlayedCards c,int n,int m)  {
+    public ThreadCreation (Player t, CardPot c,int n,int m)  {
 
         player= t;
         playedCards =c;

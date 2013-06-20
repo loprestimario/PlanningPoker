@@ -1,4 +1,6 @@
-package cards;
+package poker;
+
+import cards.Cards;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -11,7 +13,7 @@ public class Player {
     public Object chooseCard() throws InterruptedException {
 
         int item = new Random().nextInt(8);
-        ArrayList list =c.returnCard();
+        ArrayList list =c.getCards();
         return list.get(item);
     }
 }

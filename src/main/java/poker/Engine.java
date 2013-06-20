@@ -1,19 +1,18 @@
 package poker;
 
-import cards.PlayedCards;
-import cards.Player;
+import cards.CardPot;
 
 import java.io.IOException;
 
-public class ManageGame implements Runnable {
+public class Engine implements Runnable {
 
-    PlayedCards playedCards = new PlayedCards();
+    CardPot playedCards = new CardPot();
     GuiGame guiGame = new GuiGame();
     int numberPlayer;
     Thread thread;
-    Rules rules= new Rules();
+    Estimator rules= new Estimator();
 
-    ManageGame() throws IOException {
+    public Engine() throws IOException {
         numberPlayer = guiGame.readInput();
         thread = new Thread(this, "Thread manage");
         thread.start();
@@ -35,7 +34,7 @@ public class ManageGame implements Runnable {
                     e.printStackTrace();
                 }
             }
-            rules.estimate(playedCards.returnCard());
+            rules.estimate(playedCards.getCards());
             playedCards.emptyArray();
             new Timer();
         }

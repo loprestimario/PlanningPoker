@@ -1,6 +1,6 @@
 import junit.framework.Assert;
 import org.junit.Test;
-import poker.Rules;
+import poker.Estimator;
 
 import java.util.ArrayList;
 
@@ -15,7 +15,7 @@ public class TestRules {
 
     @Test
     public void testMakeAverage()  {
-        Rules rules = new Rules();
+        Estimator rules = new Estimator();
         ArrayList list= new ArrayList();
         list.add(1);
         list.add(5);
@@ -23,25 +23,41 @@ public class TestRules {
 
         Assert.assertEquals((int) (rules.makeAverage(list)), 4);
     }
+
+    @Test
+    public void testMakeAverageEmptyList()  {
+        Estimator rules = new Estimator();
+        ArrayList list= new ArrayList();
+
+        Assert.assertEquals((int) (rules.makeAverage(list)), 0);
+    }
     @Test
     public void testContainsQuestionMarkTrue()  {
-        Rules rules = new Rules();
+        Estimator rules = new Estimator();
         ArrayList list= new ArrayList();
         list.add(1);
         list.add("?");
         list.add(5);
 
-        Assert.assertEquals((rules.containsQuestionMark(list)), true);
+        Assert.assertTrue((rules.containsQuestionMark(list)));
     }
+    @Test
+    public void testContainsQuestionMarkEmptyList()  {
+        Estimator rules = new Estimator();
+        ArrayList list= new ArrayList();
+
+        Assert.assertFalse((rules.containsQuestionMark(list)));
+    }
+
 
     @Test
     public void testContainsQuestionMarkFalse()  {
-        Rules rules = new Rules();
+        Estimator rules = new Estimator();
         ArrayList list= new ArrayList();
         list.add(1);
         list.add("3");
         list.add(5);
 
-        Assert.assertEquals((rules.containsQuestionMark(list)), false);
+        Assert.assertFalse((rules.containsQuestionMark(list)));
     }
 }

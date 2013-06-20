@@ -2,9 +2,9 @@ package poker;
 
 import java.util.ArrayList;
 
-public class Rules {
+public class Estimator {
 
-    void estimate(ArrayList<Object> playedCards){
+    public void estimate(ArrayList playedCards){
 
         double estimation;
 
@@ -23,28 +23,28 @@ public class Rules {
 
     }
 
-    public boolean containsQuestionMark(ArrayList<Object> playedCards){
+    public boolean containsQuestionMark(ArrayList cardPot){
         boolean questionMark= false;
-        for (int i = 0; i < playedCards.size(); i++) {
-            if(playedCards.get(i).equals("?")){
+        for (int i = 0; i < cardPot.size(); i++) {
+            if(cardPot.get(i).equals("?")){
                 questionMark= true;
             }
         }
         return questionMark;
     }
 
-    public double makeAverage(ArrayList<Object> playedCards){
+    public double makeAverage(ArrayList cardPot){
         float average=0;
       int sum = 0;
         Object card;
-        for (int i = 0; i < playedCards.size(); i++) {
+        for (int i = 0; i < cardPot.size(); i++) {
 
-            card = playedCards.get(i);
+            card = cardPot.get(i);
             String s =card.toString();
             Integer s1= Integer.valueOf(s);
             sum = sum + s1;
         }
-        average= (float)(sum)/playedCards.size();
+        average= (float)(sum)/cardPot.size();
         return Math.ceil(average);
     }
 }

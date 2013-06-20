@@ -9,7 +9,7 @@ class TestCards {
     @Test
     public void testGetCards()  {
         Cards cards = new Cards();
-        ArrayList list =cards.returnCard();
+        ArrayList list =cards.getCards();
         ArrayList list1 = new ArrayList();
         list1.add(1);
         list1.add(2);

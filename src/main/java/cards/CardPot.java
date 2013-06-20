@@ -2,16 +2,16 @@ package cards;
 
 import java.util.ArrayList;
 
-public class PlayedCards {
+public class CardPot {
 
-    public ArrayList<Object> movesPlayed = new ArrayList<Object>();
+    public ArrayList movesPlayed = new ArrayList<Object>();
 
     public void addCard(Object o) {
 
         movesPlayed.add(o);
     }
 
-    public ArrayList<Object> returnCard() {
+    public ArrayList getCards() {
         return movesPlayed;
     }
 

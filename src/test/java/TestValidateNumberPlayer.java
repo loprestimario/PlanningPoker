@@ -26,4 +26,6 @@ public class TestValidateNumberPlayer {
         boolean validate = validateNumberPlayer.validate(52);
         Assert.assertEquals(validate, false);
     }
+
+
 }
