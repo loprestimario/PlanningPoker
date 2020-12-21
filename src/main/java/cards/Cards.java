@@ -14,6 +14,7 @@ public class Cards {
 
     private ArrayList moves;
 
+
     public Cards() {
         moves = new ArrayList();
         moves.add(ONE);
